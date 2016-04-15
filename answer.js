@@ -98,4 +98,38 @@ function highLow(arrNum) {
     
 }
 
+//console.log(highLow(myNums))
+
+//Question 7
+var myNums = [6, 3, 54, -15, 2, 8, -9 ]
+
+function highLow(arrNum) {
+    return arrNum.reduce(function(accum, currentValue) {
+        if (currentValue > accum.highest) {
+            accum.secondHighest = accum.highest;
+            accum.highest = currentValue;
+        } else if (currentValue > accum.secondHighest) {
+            accum.secondHighest = currentValue;
+            
+        } else if (currentValue < accum.lowest) {
+            accum.secondLowest = accum.lowest;
+            accum.lowest = currentValue;
+        } else if (currentValue < accum.secondLowest){
+            accum.secondLowest = currentValue;
+        }
+        
+        
+        return accum;
+    } 
+    
+    ,{
+        highest: -Infinity,
+        secondHighest: -Infinity,
+        lowest: Infinity,
+        secondLowest: Infinity
+    })
+    
+}
+
 console.log(highLow(myNums))
+

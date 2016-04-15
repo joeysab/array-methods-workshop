@@ -76,7 +76,26 @@ var arrTruthy = [false, true, 1, 0, "hello"]
      }, 0)
  }
 
-console.log(counter(str))
+//console.log(counter(str));
 
- 
- 
+
+//Question 6
+var myNums = [3, 5, 6, 7, 2]
+
+function highLow(arrNum) {
+    return arrNum.reduce(function(accum, next) {
+        if (accum.lowest > next) {
+            accum.lowest = next;
+        } else if (accum.highest < next){
+            accum.highest = next;
+        }
+        
+        return accum;
+    },{
+        highest: -Infinity,
+        lowest: Infinity
+    })
+    
+}
+
+console.log(highLow(myNums))

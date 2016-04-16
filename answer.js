@@ -136,19 +136,68 @@ function highLow(arrNum) {
 
 //Question 8
 
-function countChars (str) {
-    var splitter1 = str.split("");
-    var counter = 0;
-        splitter1.reduce(reduction)
-    return {
-        };
+/*function countChars (str) {
+    var splitter1 = str.toLowerCase().split("").filter(whiteSpaceRemoval);
+    var newSplitter = splitter1.reduce(function (acc, next){
+        if (!acc[next]){
+            acc[next] = 1;
+        }
+        
+        else {
+            acc[next]++;
+        }
+        
+        return acc;
+    },{});
+        //splitter1.reduce()
+    return newSplitter;
 }
 
 
-function reduction (prev,curr){
-    var letter = New Object()
-    curr.letter = splitter1;
-    return curr.letter;
+
+
+function whiteSpaceRemoval(char){
+    return char !== " ";
+};
+
+console.log(countChars("Hee this is joe"));
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Question 8 doing it again for practice.
+
+function countChars(str){
+    var mainReturn = str.toLowerCase().split("").filter(charFilter).reduce(reducer,{});
+    return mainReturn;
 }
 
-console.log(countChars("Hey this is joe"))
+function charFilter(value){
+    if (value === " "){
+        return;
+    } else {
+        return value;
+    }
+}
+
+function reducer (acc, next){
+    if (!acc[next]){
+        acc[next] = 1;
+    } else {
+        acc[next]++
+    }
+    return acc;
+}
+
+console.log(countChars("hey this is a test"))

@@ -131,5 +131,24 @@ function highLow(arrNum) {
     
 }
 
-console.log(highLow(myNums))
+//console.log(highLow(myNums))
 
+
+//Question 8
+
+function countChars (str) {
+    var splitter1 = str.split("");
+    var counter = 0;
+        splitter1.reduce(reduction)
+    return {
+        };
+}
+
+
+function reduction (prev,curr){
+    var letter = New Object()
+    curr.letter = splitter1;
+    return curr.letter;
+}
+
+console.log(countChars("Hey this is joe"))

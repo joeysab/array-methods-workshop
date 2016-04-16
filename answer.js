@@ -200,4 +200,87 @@ function reducer (acc, next){
     return acc;
 }
 
-console.log(countChars("hey this is a test"))
+//console.log(countChars("hey this is a test"))
+
+
+//Question 9
+
+var arr = [
+  {
+    "id": "KeXoYg92is",
+    "firstName": "John",
+    "lastName": "Smith",
+    "email": "john@smith.com"
+  },
+  {
+    "id": "NkALmSWtUp",
+    "firstName": "Donald",
+    "lastName": "Duck",
+    "email": "don@disney.com"
+  },
+  {
+    "id": "m7LPbJYSUg",
+    "firstName": "John",
+    "lastName": "Vader",
+    "email": "vader@darkside.com"
+  }
+];
+
+function peopleById(ar){
+    return ar.reduce(function(accum, next){
+      accum[next.id] = next
+      
+    return accum;
+        
+    },{});
+}
+
+//console.log(peopleById(arr));
+
+
+
+//Question 10
+
+
+var array22 = [
+  {
+    "id": "KeXoYg92is",
+    "firstName": "John",
+    "lastName": "Smith",
+    "email": "john@smith.com"
+  },
+  {
+    "id": "NkALmSWtUp",
+    "firstName": "Donald",
+    "lastName": "Duck",
+    "email": "don@disney.com"
+  },
+  {
+    "id": "m7LPbJYSUg",
+    "firstName": "John",
+    "lastName": "Vader",
+    "email": "vader@darkside.com"
+  }
+]
+
+function peopleFind(name){
+    
+}
+
+function peopleByfirstName (arr11){
+    
+    return arr11.reduce(function(accum, next){
+        
+        if (!accum[next.firstName]) {
+            accum[next.firstName] = [];
+            accum[next.firstName].push(next);
+        } else {
+            accum[next.firstName].push(next);
+        }
+        
+        return accum;
+        
+    },{})
+}
+
+console.log(peopleByfirstName(array22));
